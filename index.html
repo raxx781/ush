@@ -2,28 +2,25 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>USH Tracker</title>
+<title>USH Live Counter</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<h1>USH Tracker</h1>
-<p>Tracking how many times Daydrian says "USH!" per video</p>
+<h1>USH Counter</h1>
 
-<table>
-<thead>
-<tr>
-<th>Video</th>
-<th>USH Count</th>
-</tr>
-</thead>
+<input id="videoLink" placeholder="Paste YouTube link">
+<button onclick="loadVideo()">Load Video</button>
 
-<tbody id="videoTable"></tbody>
-</table>
+<div id="player"></div>
 
-<h2>Total USHs: <span id="total">0</span></h2>
+<h2>USH Count: <span id="count">0</span></h2>
+
+<button class="ushBtn" onclick="addUsh()">USH!</button>
+<button onclick="reset()">Reset</button>
 
 <script src="script.js"></script>
+
 </body>
 </html>
