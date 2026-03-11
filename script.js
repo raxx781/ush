@@ -1,39 +1,24 @@
-const videos = [
+let count = 0;
 
-{
-title: "Prank Video",
-ush: 4
-},
-
-{
-title: "School Vlog",
-ush: 2
-},
-
-{
-title: "Random Chaos",
-ush: 7
+function addUsh(){
+count++;
+document.getElementById("count").innerText = count;
 }
 
-];
+function reset(){
+count = 0;
+document.getElementById("count").innerText = count;
+}
 
-let total = 0;
+function loadVideo(){
 
-const table = document.getElementById("videoTable");
+const link = document.getElementById("videoLink").value;
 
-videos.forEach(video => {
+const videoId = link.split("v=")[1];
 
-const row = document.createElement("tr");
+document.getElementById("player").innerHTML =
+`<iframe width="560" height="315"
+src="https://www.youtube.com/embed/${videoId}"
+frameborder="0" allowfullscreen></iframe>`;
 
-row.innerHTML = `
-<td>${video.title}</td>
-<td>${video.ush}</td>
-`;
-
-table.appendChild(row);
-
-total += video.ush;
-
-});
-
-document.getElementById("total").innerText = total;
+}
